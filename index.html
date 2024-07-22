@@ -3,20 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>AmbientPhile.com</title>
-	<style>
-		.st1 {
-			display: block;
-			max-width: 100%;
-			margin-left: auto;
-			margin-right: auto;
-			text-align: center;
-			margin: 2rem;
-		}
-	</style>
-</head>
+    <title>AmbiencePhile.com</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 140px;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background-color: #fff;
+            padding: 0.5rem;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            max-width: 800px;
+        }
+        .audio-box {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            margin-bottom: 20px;
+            border-radius: 0.5rem;
+            border: 1px solid #ddd;
+        }
+        .audio-box div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .audio-box div label {
+            flex: 1;
+            text-align: right;
+            font-weight: bold;
+			color: #ED6A5A;
+        }
+        .audio-box div span {
+            flex: 2;
+            text-align: left;
+            font-weight: normal;
+            padding-left: 10px;
+        }
+        .audio-box audio {
+            width: 100%;
+            border-radius: 5px;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #999;
+        }
+        .cont_site_map {
+            line-height: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .parag_header {
+            color: #ED6A5A;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        a, a:visited, a:hover, a:active {
+            text-decoration: none;
+            color: #ED6A5A;
+        }
+        .cont_hp {
+            padding: 0.5rem;
+            line-height: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+            font-size: 1rem;
+        }
+        .horl {
+            text-align: center;
+            width: 80%;
+            margin: 1rem auto;
+            border-bottom: 1px solid #e1e1e1;
+        }
+        .highlight {
+            border-radius: 1rem;
+            background-color: #f4f4f4 !important;
+        }
+        .sort-dropdown {
+            margin: 1rem 0;
+        }
+    </style>
+    <script>
+        function scrollToDiv(divId) {
+            document.querySelectorAll('div').forEach(div => {
+                div.classList.remove('highlight');
+            });
+            const targetDiv = document.getElementById(divId);
+            targetDiv.scrollIntoView({ behavior: 'smooth' });
+            targetDiv.classList.toggle('highlight');
+        }
 
+        document.addEventListener("DOMContentLoaded", function() {
+            const user = "contact";
+            const domain = "ambiencephile";
+            const ext = "com";
+            const email = user + "@" + domain + "." + ext;
+            document.getElementById("email").innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+        });
+
+        function sortSamples(property) {
+            const samplesContainer = document.getElementById("samples-container");
+            const samples = Array.from(samplesContainer.getElementsByClassName("audio-box"));
+            
+            samples.sort((a, b) => {
+                let aValue, bValue;
+                
+                switch (property) {
+                    case 'Title':
+                        aValue = a.querySelector('div:nth-child(1) span').innerText;
+                        bValue = b.querySelector('div:nth-child(1) span').innerText;
+                        break;
+                    case 'Duration':
+                        aValue = a.querySelector('div:nth-child(2) span').innerText;
+                        bValue = b.querySelector('div:nth-child(2) span').innerText;
+                        break;
+                    case 'Location':
+                        aValue = a.querySelector('div:nth-child(3) span').innerText;
+                        bValue = b.querySelector('div:nth-child(3) span').innerText;
+                        break;
+                    case 'Date':
+                        aValue = a.querySelector('div:nth-child(4) span').innerText;
+                        bValue = b.querySelector('div:nth-child(4) span').innerText;
+                        break;
+                    case 'ID':
+                        aValue = parseInt(a.querySelector('div:nth-child(6) span').innerText);
+                        bValue = parseInt(b.querySelector('div:nth-child(6) span').innerText);
+                        break;
+                    case 'Price':
+                        aValue = parseFloat(a.querySelector('div:nth-child(7) span').innerText.replace('$', ''));
+                        bValue = parseFloat(b.querySelector('div:nth-child(7) span').innerText.replace('$', ''));
+                        break;
+                }
+
+                if (property === 'Date') {
+                    return new Date(aValue) - new Date(bValue);
+                } else if (property === 'ID' || property === 'Price') {
+                    return aValue - bValue;
+                } else {
+                    return aValue.localeCompare(bValue);
+                }
+            });
+
+            samples.forEach(sample => samplesContainer.appendChild(sample));
+        }
+    </script>
+</head>
 <body>
-	<div class="st1">Under construction.</div>
+    <div class="container">
+        <div id="id_cont_site_map" class="cont_hp cont_site_map">
+            <div class="parag_header" id="site-map">Site Map:</div>
+            <div id="sm_about"><a href="#about" onclick="scrollToDiv('id_cont_about')">About</a></div>
+            <div id="sm_high_quality_equipment" onclick="scrollToDiv('id_cont_high_quality_equipment')"><a href="#high_quality_equipment">High-Quality Equipment</a></div>
+            <div id="sm_continuous_recording_sessions" onclick="scrollToDiv('id_cont_sm_continuous_recording_sessions')"><a href="#continuous_recording_sessions">Continuous Recording Sessions</a></div>
+            <div id="sm_audio_format" onclick="scrollToDiv('id_cont_audio_format')"><a href="#audio_format">Superior Audio Format</a></div>
+            <div id="sm_availability_and_purchase" onclick="scrollToDiv('id_cont_availability_and_purchase')"><a href="#availability_and_purchase">Availability and Purchase</a></div>
+            <div id="sm_contact" onclick="scrollToDiv('id_cont_contact')"><a href="#contact">Contact</a></div>
+            <div id="sm_contact" onclick="scrollToDiv('id_cont_samples')"><a href="#samples">Samples</a></div>
+        </div>
+
+        <div class="horl"></div>
+
+        <div id="id_cont_about" class="cont_hp">
+            <div><a href="#sm_about" onclick="scrollToDiv('id_cont_site_map')"><span class="parag_header" id="about">About</span></a></div>
+            <div>Welcome! I specialize in capturing the pure, unaltered sounds of various environments across the globe. My passion for natural ambience drives me to travel extensively, recording the unique soundscapes of each location without disturbing the natural setting or alerting those present.</div>
+        </div>
+
+        <div id="id_cont_high_quality_equipment" class="cont_hp">
+            <div><a href="#sm_high_quality_equipment" onclick="scrollToDiv('id_cont_site_map')"><span class="parag_header" id="high_quality_equipment">High-Quality Equipment</span></a></div>
+            <div>Utilizing high-quality, professional-grade microphones and recorders, I ensure that every subtle nuance of the environment is preserved. This commitment to superior equipment guarantees that my recordings capture the true essence of each location.</div>
+        </div>
+
+        <div id="id_cont_sm_continuous_recording_sessions" class="cont_hp">
+            <div><a href="#sm_continuous_recording_sessions" onclick="scrollToDiv('id_cont_site_map')"><span class="parag_header" id="continuous_recording_sessions">Continuous Recording Sessions</span></a></div>
+            <div>Each recording is one continuous session, often extending beyond 10 hours in length. This approach allows for an uninterrupted, authentic auditory experience, reflecting the natural atmosphere without any artificial breaks or edits.</div>
+        </div>
+
+        <div id="id_cont_audio_format" class="cont_hp">
+            <div><a href="#sm_audio_format" onclick="scrollToDiv('id_cont_site_map')"><span class="parag_header" id="audio_format">Superior Audio Format</span></a></div>
+            <div>My recordings are meticulously captured in 32-bit float WAV format to provide the highest possible quality. This ensures an immersive and detailed auditory experience, maintaining the authenticity and tranquility of the natural soundscapes.</div>
+        </div>
+
+        <div id="id_cont_availability_and_purchase" class="cont_hp">
+            <div><a href="#sm_availability_and_purchase" onclick="scrollToDiv('id_cont_site_map')"><span class="parag_header" id="availability_and_purchase">Availability and Purchase</span></a></div>
+            <div>All recordings available for purchase are listed below with unique ID numbers and sample previews. Each sample is a collection of short segments from the actual recording, giving you a taste of the natural ambiance captured. The recordings are sorted by the most recent, with the newest ones at the top. If you are interested, you can pay using one of the available payment methods and send the payment information along with the IDs of the recordings you want. After reviewing your payment, I will contact you with a temporary download link for the requested recordings.</div>
+        </div>
+
+        <div id="id_cont_contact" class="cont_hp">
+            <div><a href="#sm_contact" onclick="scrollToDiv('id_cont_site_map')"><span class="parag_header" id="contact">Contact</span></a></div>
+            <div id="email"></div>
+        </div>
+
+        <div id="id_cont_samples" class="cont_hp">
+            <div style="margin-bottom: 1rem;"><a href="#sm_contact" onclick="scrollToDiv('id_cont_site_map')"><span class="parag_header" id="samples">Samples</span></a></div>
+
+            <div class="sort-dropdown">
+                <label for="sort-select">Sort by:</label>
+                <select id="sort-select" onchange="sortSamples(this.value)">
+                    <option value="Title">Title</option>
+                    <option value="Duration">Duration</option>
+                    <option value="Location">Location</option>
+                    <option value="Date">Date</option>
+                    <option value="ID">ID</option>
+                    <option value="Price">Price</option>
+                </select>
+            </div>
+
+            <div id="samples-container">
+                <div class="audio-box">
+                    <div><label>Title:</label> <span>Dew</span></div>
+                    <div><label>Duration:</label> <span>11:30:45</span></div>
+                    <div><label>Location:</label> <span>Greece</span></div>
+                    <div><label>Date:</label> <span>2023</span></div>
+                    <div><label>Description:</label> <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at diam ullamcorper, vestibulum dolor in, sodales lacus. Sed pellentesque ante sed libero auctor, consectetur ornare nisl consectetur. Duis laoreet enim eget tortor blandit scelerisque. Nullam vitae lacus nec sem pulvinar facilisis id a orci. Aenean lectus justo, aliquet id tortor mattis, ornare porttitor mi. Nulla facilisi. Vivamus at porttitor urna. Suspendisse potenti. Morbi non velit diam. Vestibulum scelerisque convallis magna, mollis vestibulum ipsum euismod eget. Nulla sed sodales turpis, non scelerisque tellus. Aliquam augue risus, efficitur vehicula ornare eu, posuere vel magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span></div>
+                    <div><label>ID:</label> <span>99999</span></div>
+                    <div><label>Price:</label> <span>$20</span></div>
+                    <div><label>Sample:</label></div>
+                    <audio controls>
+                        <source src="./sample.flac" type="audio/flac">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="audio-box">
+                    <div><label>Title:</label> <span>Mist</span></div>
+                    <div><label>Duration:</label> <span>08:20:30</span></div>
+                    <div><label>Location:</label> <span>Canada</span></div>
+                    <div><label>Date:</label> <span>2022</span></div>
+                    <div><label>Description:</label> <span>Morning mist</span></div>
+                    <div><label>ID:</label> <span>88888</span></div>
+                    <div><label>Price:</label> <span>$25</span></div>
+                    <div><label>Sample:</label></div>
+                    <audio controls>
+                        <source src="./sample2.flac" type="audio/flac">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <!-- Add more audio samples here -->
+            </div>
+        </div>
+
+        <footer>
+            &copy; 2024 AmbiencePhile.com. All rights reserved.
+        </footer>
+    </div>
 </body>
 </html>
