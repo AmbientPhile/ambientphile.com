@@ -147,7 +147,7 @@
 
         <div id="id_cont_availability_and_purchase" class="cont_hp">
             <div><a href="#sm_availability_and_purchase" onclick="scrollToDiv('id_cont_site_map')"><span class="parag_header" id="availability_and_purchase">Availability and Purchase</span></a></div>
-            <p>All recordings available for purchase are listed below with unique ID numbers and sample previews. Each sample is a collection of short segments from the actual recording, giving you a taste of the natural ambiance captured. The recordings are sorted by the most recent, with the newest ones at the top. If you are interested, you can pay using one of the available payment methods and send the payment information along with the IDs of the recordings you want. After reviewing your payment, I will contact you with a temporary download link for the requested recordings.</p>
+            <p>All recordings available for purchase are listed below with sample previews. Each sample is a collection of short segments from the actual recording, giving you a taste of the natural ambiance captured. The recordings are sorted by the most recent, with the newest ones at the top. If you are interested, you can pay using one of the available payment methods and send the payment information along with the IDs of the recordings you want. After reviewing your payment, I will contact you with a temporary download link for the requested recordings.</p>
         </div>
 
         <div id="id_cont_contact" class="cont_hp">
@@ -157,8 +157,8 @@
 
         <div id="id_cont_samples" class="cont_hp">
             <div style="margin-bottom: 1rem;"><a href="#sm_contact" onclick="scrollToDiv('id_cont_site_map')"><span class="parag_header" id="samples">Samples</span></a></div>
-
-            <div class="sort-dropdown">
+<!-- ==================== -->
+            <div style="display: none;" class="sort-dropdown">
                 <label for="sort-select">Sort by:</label>
                 <select id="sort-select" onchange="sortSamples(this.value)">
                     <option value="Title">Title</option>
@@ -169,37 +169,25 @@
                     <option value="Price">Price</option>
                 </select>
             </div>
+<!-- ==================== -->
 
             <div id="samples-container">
 			
 				<div class="audio-box">
-                    <div><label>Title:</label> <span>a</span></div>
-                    <div><label>Duration:</label> <span>7</span></div>
-                    <div><label>Location:</label> <span>Australia</span></div>
-                    <div><label>Date:</label> <span>2024</span></div>
-                    <div><label>ID:</label> <span>9891</span></div>
-                    <div><label>Price:</label> <span>$55</span></div>
-                    <div><label>Sample:</label> <span>...</span></div>
+                    <div>Crowmania / $20</label></div>
                     <audio controls>
                         <source src="./files/audio_samples/sample_1.mp3" type="audio/flac">
                         Your browser does not support the audio element.
                     </audio>
-                    <div><label>Description:</label> <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></div>
+                    <div>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
                 </div>
-				
 				<div class="audio-box">
-                    <div><label>Title:</label> <span>b</span></div>
-                    <div><label>Duration:</label> <span>3</span></div>
-                    <div><label>Location:</label> <span>Italy</span></div>
-                    <div><label>Date:</label> <span>2023</span></div>
-                    <div><label>ID:</label> <span>9890</span></div>
-                    <div><label>Price:</label> <span>$40</span></div>
-                    <div><label>Sample:</label> <span>...</span></div>
+                    <div>Night watchers / $20</label></div>
                     <audio controls>
                         <source src="./files/audio_samples/sample_9890.mp3" type="audio/flac">
                         Your browser does not support the audio element.
                     </audio>
-                    <div><label>Description:</label> <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></div>
+                    <div>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
                 </div>
 				
 				
