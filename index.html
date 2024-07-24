@@ -7,7 +7,7 @@
 	<script src='./script.js'></script>
     <style>
 		:root {
-			--accent-color: #53CA79;
+			--accent-color: #F06543;
 			--bg-color: #f4f4f4;
 		}
         html {
@@ -69,14 +69,10 @@
 			text-align: center;
 			width: 100%;
         }
-        .cont_site_map {
-            margin-bottom: 1rem;
-        }
         .parag_header {
             color: var(--accent-color);
             font-weight: bold;
 			font-size: 1.2rem;
-			margin-bottom: 0.5rem;
         }
 		.parag_header + div {
 		}
@@ -117,51 +113,31 @@
 </head>
 <body>
     <div class="container">
-        <div id="id_cont_site_map" class="cont_hp cont_site_map">
-            <div class="parag_header" id="site-map">Site Map:</div>
-			<div style="margin-left: 1rem;">
-				<div id="sm_about"><a href="#about" onclick="scrollToDiv('id_cont_about')">About</a></div>
-				<div id="sm_contact" onclick="scrollToDiv('id_cont_contact')"><a href="#contact">Contact</a></div>
-				<div id="sm_high_quality_equipment" onclick="scrollToDiv('id_cont_high_quality_equipment')"><a href="#high_quality_equipment">Equipment</a></div>
-				<div id="sm_continuous_recording_sessions" onclick="scrollToDiv('id_cont_sm_continuous_recording_sessions')"><a href="#continuous_recording_sessions">Recording Sessions</a></div>
-				<div id="sm_audio_format" onclick="scrollToDiv('id_cont_audio_format')"><a href="#audio_format">Audio Format</a></div>
-				<div id="sm_availability_and_purchase" onclick="scrollToDiv('id_cont_availability_and_purchase')"><a href="#availability_and_purchase">Download</a></div>
-			</div>
-        </div>
-
-        <div class="horl"></div>
-
-        <div id="id_cont_about" class="cont_hp">
-            <div class="parag_header" id="about"><a href="#sm_about" onclick="scrollToDiv('id_cont_site_map')">About</a></div>
-            <div>Welcome! I specialize in capturing the pure, unaltered sounds of various environments across the globe. My passion for natural ambience drives me to travel extensively, recording the unique soundscapes of each location without disturbing the natural setting or alerting those present.</div>
+        <div class="cont_hp">
+            <div>Welcome AmbientPhile.com. I specialize in capturing the pure, unaltered sounds of various environments across the globe. My passion for natural ambience drives me to travel extensively, recording the unique soundscapes of each location without disturbing the natural setting or alerting those present.</div>
         </div>
 		
-        <div id="id_cont_contact" class="cont_hp">
-            <div><a href="#sm_contact" onclick="scrollToDiv('id_cont_site_map')"><span class="parag_header" id="contact">Contact</span></a></div>
+        <div class="cont_hp">
+            <div class="parag_header">Contact</div>
             <div id="email"></div>
         </div>
 
-        <div id="id_cont_high_quality_equipment" class="cont_hp">
-            <div class="parag_header" id="high_quality_equipment"><a href="#sm_high_quality_equipment" onclick="scrollToDiv('id_cont_site_map')">Equipment</a></div>
+        <div class="cont_hp">
+            <div class="parag_header" id="high_quality_equipment">Equipment</div>
             <div>Utilizing high-quality, professional-grade microphones and recorders, I ensure that every subtle nuance of the environment is preserved. This commitment to superior equipment guarantees that my recordings capture the true essence of each location.</div>
         </div>
 
-        <div id="id_cont_sm_continuous_recording_sessions" class="cont_hp">
-            <div class="parag_header" id="continuous_recording_sessions"><a href="#sm_continuous_recording_sessions" onclick="scrollToDiv('id_cont_site_map')">Recording Sessions</a></div>
-            <div>Each recording is one continuous session, often extending beyond 10 hours in length. This approach allows for an uninterrupted, authentic auditory experience, reflecting the natural atmosphere without any artificial breaks or edits.</div>
+        <div class="cont_hp">
+            <div class="parag_header">Recordings</div>
+            <div>Each recording is one continuous session, often extending beyond 10 hours in length. This approach allows for an uninterrupted, authentic auditory experience, reflecting the natural atmosphere without any artificial breaks or edits. My recordings are meticulously captured in 32-bit float WAV format to provide the highest possible quality. This ensures an immersive and detailed auditory experience, maintaining the authenticity and tranquility of the natural soundscapes.</div>
         </div>
 
-        <div id="id_cont_audio_format" class="cont_hp">
-            <div class="parag_header" id="audio_format"><a href="#sm_audio_format" onclick="scrollToDiv('id_cont_site_map')">Audio Format</a></div>
-            <div>My recordings are meticulously captured in 32-bit float WAV format to provide the highest possible quality. This ensures an immersive and detailed auditory experience, maintaining the authenticity and tranquility of the natural soundscapes.</div>
-        </div>
-
-        <div id="id_cont_availability_and_purchase" class="cont_hp">
-            <div class="parag_header" id="availability_and_purchase"><a href="#sm_availability_and_purchase" onclick="scrollToDiv('id_cont_site_map')">Download</a></div>
+        <div class="cont_hp">
+            <div class="parag_header">Download</div>
             <div>All recordings available for purchase are listed below with sample previews. Each sample is a collection of short segments from the actual recording, giving you a taste of the natural ambiance captured. The recordings are sorted by the most recent, with the newest ones at the top. If you are interested, you can pay using one of the available payment methods and send the payment information along with the IDs of the recordings you want. After reviewing your payment, I will contact you with a temporary download link for the requested recordings.</div>
         </div>
 
-        <div id="id_cont_samples" class="cont_hp">
+        <div class="cont_hp">
 <!-- ==================== -->
             <div style="display: none;" class="sort-dropdown">
                 <label for="sort-select">Sort by:</label>
