@@ -73,11 +73,20 @@
 		.rec-title {
 			font-weight: bold;
 			font-size: 1.5rem;
+			text-align: center;
 		}
 		
 		.rec-prop {
-			font-weight: bold;
+            display: inline-block;
+            font-weight: bold;
+			text-align: right;
 		}
+		
+		.rec-details {
+            display: grid;
+            grid-template-columns: auto 1fr; /* Allows first column to auto-size and second column to take remaining space */
+            gap: 0px 0.5rem; /* Adjusts spacing between grid items */
+        }
 		
 		.content {
 			overflow: hidden;
@@ -102,9 +111,12 @@
             <div id="samples-container">
 			<!-- ==================== -->
 				<div class="audio-box">
-                    <div class="rec-title">Night Watchers</div>
+					<div class="rec-title">Night Watchers</div>
 					<p class="rec-details">
-						<span class="rec-prop">Loction:</span> Italy<br><span class="rec-prop">Duration:</span> 09:21:45<br><span class="rec-prop">Size:</span> 24.1 GB<br><span class="rec-prop">Price:</span> $20
+						<span class="rec-prop">Location:</span> <span>Italy</span>
+						<span class="rec-prop">Duration:</span> <span>09:21:45</span>
+						<span class="rec-prop">Size:</span> <span>24.1 GB</span>
+						<span class="rec-prop">Price:</span> <span>$20</span>
 					</p>
 					<p>Overnight on a high mountainside, facing another mountain dotted with farmers' houses where dogs bark frequently, their sounds echoing through the mountains and valley. In the valley below, there's a highway and a segmented bridge.</p>
                     <audio controls>
