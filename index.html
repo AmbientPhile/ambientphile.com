@@ -7,7 +7,8 @@
 	<script src='./script.js'></script>
     <style>
 		:root {
-			--accent-color: #F06543;
+			--accent-color_1: #F06543;
+			--accent-color: #000;
 			--bg-color: #f4f4f4;
 		}
         html {
@@ -110,12 +111,12 @@
 		
 		.uc {
 			margin-bottom: 2rem;
-			text-align: center;
 			margin-left: auto;
 			margin-right: auto;
-			color: white;
-			-border: 1px solid red;
-			background-color: var(--accent-color);
+			text-align: center;
+			color: gray;
+			border: 1px dashed gray;
+			background-color: yellow;
 			border-radius: 0.5rem;
 			padding: 0.5rem;
 		}
@@ -128,43 +129,19 @@
 		.rec-prop {
 			font-weight: bold;
 		}
-		
+
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="cont_hp">
-            <div class="uc">Under construction</div>
-            <div>My love for listening to ambient sounds inspired the creation of AmbientPhile.com. I travel the world to capture the pure, natural sounds of different environments, recording unique soundscapes without disturbing the setting or alerting those present. Below, you can learn more about the equipment I use, my recordings, and how to buy and download them. At the bottom of the page, you'll also find a sample of each recording available for sale, along with some information about each one.</div>
-        </div>
-		
+		<div class="uc">Under construction</div>
+		<p>AmbientPhile.com was born out of my love for recording and listening to ambient sounds. I travel the world, capturing the pure, natural sounds of various environments with professional-grade microphones and recorders to preserve every subtle nuance without disturbing the setting or alerting those present. I created this website to offer my recordings for sale, sharing the beauty of these soundscapes with others.</p>
 
-        <div class="cont_hp">
-            <div class="parag_header" id="high_quality_equipment">Equipment</div>
-            <div>Utilizing high-quality, professional-grade microphones and recorders, I ensure that every subtle nuance of the environment is preserved. This commitment to superior equipment guarantees that my recordings capture the true essence of each location.</div>
-        </div>
+		<p>Each recording is a single continuous session, often exceeding 10 hours, maintaining the natural atmosphere without artificial breaks or edits. These recordings are in 32-bit float WAV format at a sample rate of 96,000 Hz, ensuring high-fidelity representation that preserves the authenticity and tranquility of the soundscapes. Each download includes the original WAV files and a joint, tagged FLAC file edited to eliminate any clipping.</p>
 
-        <div class="cont_hp">
-            <div class="parag_header">Recordings</div>
-            <div>Each recording is captured as a single, continuous session that often exceeds 10 hours, which maintains the natural atmosphere without introducing artificial breaks or edits. These recordings are made in 32-bit float WAV format at a sample rate of 96,000 Hz, ensuring a high-fidelity representation that preserves the authenticity and tranquility of the natural soundscapes. Additionally, each download includes a joint and tagged FLAC file, which has been edited to eliminate any clipping, alongside the original WAV files.</div>
-        </div>
+		<p>Recordings available for purchase are listed below with sample previews and details such as title, duration, size, and price (commercial price is three times the personal price). For privacy reasons, the exact location and recording date are left out. Each sample includes short segments from the actual recording. To purchase, simply pay using one of the available methods and email me the payment information along with the recordings you want at <span id="email"></span>. After confirming your payment, I'll send you a temporary download link for the requested recordings.</p>
 
-        <div class="cont_hp">
-            <div class="parag_header">Payment options</div>
-            <div>Will be available soon.</div>
-        </div>
-		
-        <div class="cont_hp">
-            <div class="parag_header">Contact</div>
-            <div id="email""></div>
-        </div>
-		
-        <div class="cont_hp">
-            <div class="parag_header">Download</div>
-            <div>All recordings for purchase are listed below with sample previews and details such as title, duration, size, and price (commercial price is 3 times the personal price). Exact location and recording date are intentionally left out for privacy reasons and to let your imagination roam free. Each sample includes short segments from the actual recording, giving you a taste of the natural ambiance. The recordings are sorted by the newest first. If you're interested, just pay using one of the available methods and email me the payment information along with the recordings you want. After confirming your payment, I'll send you a temporary download link for the requested recordings.</div>
-        </div>
-
-        <div class="cont_hp">
+        <!-- <div class="cont_hp"> -->
 
             <div id="samples-container">
 			<!-- ==================== -->
@@ -202,7 +179,7 @@
                 </div>
 			<!-- ==================== -->
             </div>
-        </div>
+        <!-- </div> -->
 
         <footer>
             &copy; 2024 AmbientPhile.com. All rights reserved.
