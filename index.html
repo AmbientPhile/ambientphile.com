@@ -14,7 +14,17 @@
 			console.log('Height of the top bar:', headerHeight); // Print the height of the top bar
 			content.style.paddingTop = headerHeight + 'px';
 		});
-	</script>
+		
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            var contentDiv = document.getElementById('contentDiv');
+            contentDiv.classList.toggle('expanded');
+            if (contentDiv.classList.contains('expanded')) {
+                this.textContent = 'Read Less';
+            } else {
+                this.textContent = 'Read More';
+            }
+        });
+    </script>
 	
     <style>
 		:root {
@@ -97,6 +107,15 @@
             width: 90%;
             max-width: 800px;
         }
+		
+        .expandable-div {
+            max-height: 100px; /* Initial height */
+            overflow: hidden; /* Hide overflow content */
+            transition: max-height 0.5s ease; /* Smooth transition for height changes */
+        }
+        .expanded {
+            max-height: 1000px; /* Large value to fit all content; adjust as needed */
+        }
 
     </style>
 </head>
@@ -104,13 +123,14 @@
 		<div class="under_construction">UNDER CONSTRUCTION</div>
 		<!-- ======================================== -->
 		<div class="content">
-		
+<div class="expandable-div" id="contentDiv">
 		<p>AmbientPhile.com was born out of my love for recording and listening to ambient sounds. A couple of times a year, I travel to different countries, capturing the natural sounds of various environments without disturbing the setting or alerting those present. To try and capture every subtle nuance of these soundscapes, I use professional-grade microphones and recorders. I created this website to offer my recordings for sale and help fund my travels in making these ambient recordings.</p>
 
 		<p>Each recording is a single continuous session, often exceeding 10 hours, maintaining the natural atmosphere without artificial breaks or edits. These recordings are in 32-bit float WAV format at a sample rate of 96,000 Hz, ensuring high-fidelity representation that preserves the authenticity and tranquility of the soundscapes. Each download includes the original WAV files and a joint, tagged FLAC file edited to eliminate any clipping.</p>
 
 		<p>Recordings available for purchase are listed below with sample previews and details such as title, duration, size, and price (commercial price is three times the personal price). For privacy reasons, the exact location and recording date are left out. Each sample includes short segments from the actual recording. To purchase, simply pay using one of the available methods (to be implemented) and email me the payment information along with the recordings you want at <span id="email"></span>. After confirming your payment, I'll send you a temporary download link for the requested recordings.</p>
-
+</div>
+<button id="toggleButton">Read More</button>
             <div id="samples-container">
 			<!-- ==================== -->
 				<div class="audio-box">
