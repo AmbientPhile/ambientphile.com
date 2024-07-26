@@ -6,15 +6,15 @@
     <title>AmbientPhile.com</title>
 	<script src='./script.js'></script>
 	
-    <script>
-        window.addEventListener('load', function() {
-            var header = document.querySelector('.under_construction');
-            var content = document.querySelector('.content');
-            var headerHeight = header.offsetHeight;
-            console.log('Height of the top bar:', headerHeight); // Print the height of the top bar
-            content.style.paddingTop = headerHeight + 'px';
-        });
-    </script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var header = document.querySelector('.under_construction');
+			var content = document.querySelector('.content');
+			var headerHeight = header.offsetHeight;
+			console.log('Height of the top bar:', headerHeight); // Print the height of the top bar
+			content.style.paddingTop = headerHeight + 'px';
+		});
+	</script>
 	
     <style>
 		:root {
@@ -87,28 +87,6 @@
 			font-size: 1.2rem;
 			margin-top: 1rem;
         }
-
-        a, a:visited, a:hover, a:active {
-            text-decoration: none;
-            color: #000;
-        }
-        .cont_hp {
-            padding: 0.5rem;
-            color: #333;
-        }
-        .horl {
-            text-align: center;
-            width: 80%;
-            margin: 1rem auto;
-            border-bottom: 1px solid #e1e1e1;
-        }
-        .highlight {
-            border-radius: 1rem;
-            background-color: #f4f4f4 !important;
-        }
-        .sort-dropdown {
-            margin: 1rem 0;
-        }
 		
 		.under_construction {
             z-index: 1000;
@@ -156,8 +134,6 @@
 		<p>Each recording is a single continuous session, often exceeding 10 hours, maintaining the natural atmosphere without artificial breaks or edits. These recordings are in 32-bit float WAV format at a sample rate of 96,000 Hz, ensuring high-fidelity representation that preserves the authenticity and tranquility of the soundscapes. Each download includes the original WAV files and a joint, tagged FLAC file edited to eliminate any clipping.</p>
 
 		<p>Recordings available for purchase are listed below with sample previews and details such as title, duration, size, and price (commercial price is three times the personal price). For privacy reasons, the exact location and recording date are left out. Each sample includes short segments from the actual recording. To purchase, simply pay using one of the available methods and email me the payment information along with the recordings you want at <span id="email"></span>. After confirming your payment, I'll send you a temporary download link for the requested recordings.</p>
-
-        <!-- <div class="cont_hp"> -->
 
             <div id="samples-container">
 			<!-- ==================== -->
