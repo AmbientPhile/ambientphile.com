@@ -14,17 +14,9 @@
 			console.log('Height of the top bar:', headerHeight); // Print the height of the top bar
 			content.style.paddingTop = headerHeight + 'px';
 		});
-		
-        document.getElementById('toggleButton').addEventListener('click', function() {
-            var contentDiv = document.getElementById('contentDiv');
-            contentDiv.classList.toggle('expanded');
-            if (contentDiv.classList.contains('expanded')) {
-                this.textContent = 'Read Less';
-            } else {
-                this.textContent = 'Read More';
-            }
-        });
     </script>
+		
+
 	
     <style>
 		:root {
@@ -180,5 +172,16 @@
         </footer>
     </div>
 		<!-- ======================================== -->
+	<script>
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            var contentDiv = document.getElementById('contentDiv');
+            contentDiv.classList.toggle('expanded');
+            if (contentDiv.classList.contains('expanded')) {
+                this.textContent = 'Read Less';
+            } else {
+                this.textContent = 'Read More';
+            }
+        });
+    </script>
 </body>
 </html>
