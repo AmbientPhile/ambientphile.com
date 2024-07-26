@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AmbientPhile.com</title>
 	<script src='./script.js'></script>
+	
+    <script>
+        window.addEventListener('load', function() {
+            var header = document.querySelector('.header');
+            var content = document.querySelector('.content');
+            var headerHeight = header.offsetHeight;
+            console.log('Height of the top bar:', headerHeight); // Print the height of the top bar
+            content.style.paddingTop = headerHeight + 'px';
+        });
+    </script>
+	
     <style>
 		:root {
 			--accent-color_1: #F06543;
@@ -125,7 +136,6 @@
 		}
 		
 		.content {
-            padding-top: 50px; /* Ensure content is not hidden behind the fixed header */
 			overflow: hidden;
             background-color: #fff;
             margin: 20px 0;
