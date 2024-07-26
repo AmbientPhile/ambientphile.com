@@ -76,17 +76,7 @@
 			font-size: 1.2rem;
 			margin-top: 1rem;
         }
-        .under_construction {
-			color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
-			text-align: center;
-			margin: -1rem -1rem;
-			margin-bottom: 1rem;
-			width: 120%;
-			max-height: 100px;
-			overflow: hidden;
-        }
+
         a, a:visited, a:hover, a:active {
             text-decoration: none;
             color: #000;
@@ -109,16 +99,21 @@
             margin: 1rem 0;
         }
 		
-		.uc {
-			margin-bottom: 2rem;
-			margin-left: auto;
-			margin-right: auto;
-			text-align: center;
-			color: gray;
-			border: 1px dashed gray;
-			background-color: yellow;
-			border-radius: 0.5rem;
-			padding: 0.5rem;
+		.under_construction {
+            z-index: 1000;
+            position: fixed;
+            top: 0;
+            width: 100%;
+			height: 50px;
+            background-color: #FFFF5C;
+            color: black;
+            text-align: center;
+            padding: 0.5rem;
+            border-bottom: 1px dashed silver;
+
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Optional: to center the text horizontally as well */
 		}
 		
 		.rec-title {
@@ -129,12 +124,24 @@
 		.rec-prop {
 			font-weight: bold;
 		}
+		
+		.content {
+            padding-top: 50px; /* Ensure content is not hidden behind the fixed header */
+			overflow: hidden;
+            background-color: #fff;
+            margin: 20px 0;
+            width: 90%;
+            max-width: 800px;
+        }
 
     </style>
 </head>
 <body>
-    <div class="container">
-		<div class="uc">Under construction</div>
+		<div class="under_construction">UNDER CONSTRUCTION</div>
+		<!-- ======================================== -->
+		<div class="content">
+		
+		
 		<p>AmbientPhile.com was born out of my love for recording and listening to ambient sounds. I travel the world, capturing the pure, natural sounds of various environments with professional-grade microphones and recorders to preserve every subtle nuance without disturbing the setting or alerting those present. I created this website to offer my recordings for sale, sharing the beauty of these soundscapes with others.</p>
 
 		<p>Each recording is a single continuous session, often exceeding 10 hours, maintaining the natural atmosphere without artificial breaks or edits. These recordings are in 32-bit float WAV format at a sample rate of 96,000 Hz, ensuring high-fidelity representation that preserves the authenticity and tranquility of the soundscapes. Each download includes the original WAV files and a joint, tagged FLAC file edited to eliminate any clipping.</p>
@@ -185,5 +192,6 @@
             &copy; 2024 AmbientPhile.com. All rights reserved.
         </footer>
     </div>
+		<!-- ======================================== -->
 </body>
 </html>
