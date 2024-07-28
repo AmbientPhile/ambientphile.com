@@ -8,7 +8,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var header = document.querySelector('.under_construction');
+            var header = document.querySelector('.navBar');
             var content = document.querySelector('.content');
             var headerHeight = header.offsetHeight;
             console.log('Height of the top bar:', headerHeight); // Print the height of the top bar
@@ -76,20 +76,7 @@
             text-align: center;
             width: 100%;
         }
-        .under_construction {
-            z-index: 1000;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #FFFF85;
-            padding: 0.2rem;
-            color: black;
-            text-align: center;
-            border-bottom: 1px dashed silver;
-            display: flex;
-            align-items: center;
-            justify-content: center; /* Optional: to center the text horizontally as well */
-        }
+
         .rec-title {
             font-weight: bold;
             font-size: 1.5rem;
@@ -113,6 +100,7 @@
             background-color: #fff;
             width: 90%;
             max-width: 800px;
+			margin-top: 1rem;
         }
         .expandable-div {
             overflow: hidden; /* Hide overflow content */
@@ -131,7 +119,22 @@
             color: blue;
 			cursor: pointer;
         }
+        .navBar {
+            z-index: 1000;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--bg-color);
+            padding: 0.2rem;
+            text-align: center;
+            filter: drop-shadow(0 0 0.3rem gray);
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Optional: to center the text horizontally as well */
+        }
 		.menu {
+            font-weight: bold;
+            font-size: 1.2rem;
 			text-align: center;
             width: 90%;
             max-width: 800px;
@@ -139,6 +142,12 @@
 			margin-bottom: 20px;
 			margin-left: auto;
 			margin-right: auto;
+		}
+		.menu_sep {
+			color: silver;
+		}
+		.menu_sep::after {
+			content: " • ";
 		}
 		.cont_about {
 			overflow-y: scroll;
@@ -150,15 +159,20 @@
 			border-radius: 1rem;
 			padding: 1rem;
 		}
+		.navBar a {
+			color: #000;
+			text-decoration: none; /* no underline */
+		}
     </style>
 </head>
 <body>
-    <div class="under_construction">UNDER CONSTRUCTION</div>
+    <div class="navBar">
+        <div class="menu">
+			<span><a href="#about">About</a></span><span class="menu_sep"></span><span><a href="#recordings">Recordings</a></span><span class="menu_sep"></span><span><a href="#buy">Buy</a></span><span class="menu_sep"></span><span><a href="#samples-container">Samples</a></span>
+        </div>
+	</div>
     <!-- ======================================== -->
     <div class="content">
-        <div class="menu">
-			<span><a href="#about">About</a></span> <span style="color: #ddd;">|</span> <span><a href="#recordings">Recordings</a></span> <span style="color: #ddd;">|</span> <span><a href="#buy">Buy</a></span> <span style="color: #ddd;">|</span> <span><a href="#samples-container">Samples</a></span>
-        </div>
         <!-- <div class="expandable-div" id="contentDiv"> -->
         <div class="cont_about">
             <p id="about"><b>About</b><br>AmbientPhile.com was born out of my love for recording and listening to ambient sounds. A couple of times a year, I travel to different countries, capturing the natural sounds of various environments without disturbing the setting or alerting those present. To try and capture every subtle nuance of these soundscapes, I use professional-grade microphones and recorders. I created this website to offer my recordings for sale and help fund my travels in making these ambient recordings.</p>
