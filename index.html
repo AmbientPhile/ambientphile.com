@@ -57,14 +57,21 @@
             justify-content: center;
             font-family: system-ui;
         }
-        .audio-box {
+        .audio_box {
             background-color: var(--bg-color);
-            padding: 1rem;
             margin-bottom: 20px;
             border-radius: 1rem;
             border: 1px solid #ddd;
+			overflow: hidden;
+			filter: drop-shadow(0 0 0.3rem #ddd); /* Apply shadow directly to the image */
+			width: 90%;
+			margin-left: auto;
+			margin-right: auto;
         }
-        .audio-box audio {
+		.audio_box_text_cont {
+			padding: 1rem;
+		}
+        .audio_box audio {
             width: 100%;
         }
         footer {
@@ -97,7 +104,6 @@
         }
         .content {
             overflow: hidden;
-            background-color: #fff;
             width: 90%;
             max-width: 800px;
 			margin-top: 1rem;
@@ -125,21 +131,18 @@
             top: 0;
             width: 100%;
             background-color: var(--bg-color);
-            padding: 0.2rem;
+            padding: 0.5rem;
             text-align: center;
             filter: drop-shadow(0 0 0.3rem gray);
             display: flex;
             align-items: center;
-            justify-content: center; /* Optional: to center the text horizontally as well */
-        }
-		.menu {
-            font-weight: bold;
+            justify-content: center;
+             font-weight: bold;
             font-size: 1.2rem;
-			text-align: center;
+       }
+		.menu {
             width: 90%;
             max-width: 800px;
-			margin-top: 20px;
-			margin-bottom: 20px;
 			margin-left: auto;
 			margin-right: auto;
 		}
@@ -150,13 +153,13 @@
 			content: " • ";
 		}
 		.cont_about {
-			overflow-y: scroll;
-			max-height: 300px;
-			margin-bottom: 20px;
-			margin-left: auto;
-			margin-right: auto;
 			border: 1px solid #ddd;
 			border-radius: 1rem;
+			overflow-y: scroll;
+			max-height: 300px;
+			margin-bottom: 50px;
+			margin-left: auto;
+			margin-right: auto;
 			padding: 1rem;
 			scroll-behavior: smooth;
 		}
@@ -169,70 +172,115 @@
 			font-weight: bold;
 			font-size: 1.2rem;
 		}
+		.rec_img_cont {
+			width: 100%;
+			height: 200px;
+			display: block;
+			overflow: hidden;
+			position: relative; /* Ensure positioning context */
+			filter: drop-shadow(0 0 0.5rem #555); /* Apply shadow directly to the image */
+		}
+		.rec_img {
+			width: 100%;
+		}
     </style>
 </head>
 <body>
     <div class="navBar">
         <div class="menu">
-			<span><a href="#about">About</a></span><span class="menu_sep"></span><span><a href="#recordings">Recordings</a></span><span class="menu_sep"></span><span><a href="#buy">Buy</a></span><span class="menu_sep"></span><span><a href="#samples-container">Samples</a></span>
+			<span><a href="#home">Home</a></span><span class="menu_sep"></span><span><a href="#recordings">Recordings</a></span><span class="menu_sep"></span><span><a href="#buy">Buy</a></span><span class="menu_sep"></span><span><a href="#samples-container">Samples</a></span>
         </div>
 	</div>
     <!-- ======================================== -->
     <div class="content">
         <!-- <div class="expandable-div" id="contentDiv"> -->
         <div class="cont_about">
-            <p id="about"><div class="pHeader">About</div>AmbientPhile.com was born out of my love for recording and listening to ambient sounds. A couple of times a year, I travel to different countries, capturing the natural sounds of various environments without disturbing the setting or alerting those present. To try and capture every subtle nuance of these soundscapes, I use professional-grade microphones and recorders. I created this website to offer my recordings for sale and help fund my travels in making these ambient recordings.</p>
+            <p id="home">AmbientPhile.com was born out of my love for recording and listening to ambient sounds. A couple of times a year, I travel to different countries, capturing the natural sounds of various environments without disturbing the setting or alerting those present. To try and capture every subtle nuance of these soundscapes, I use professional-grade microphones and recorders. I created this website to offer my recordings for sale and help fund my travels in making these ambient recordings.</p>
 
             <p id="recordings"><div class="pHeader">Recordings</div>Each recording is a single continuous session, often exceeding 10 hours, maintaining the natural atmosphere without artificial breaks or edits. These recordings are in 32-bit float WAV format at a sample rate of 96,000 Hz, ensuring high-fidelity representation that preserves the authenticity and tranquility of the soundscapes. Each download includes the original WAV files and a joint, tagged FLAC file edited to eliminate any clipping.</p>
 
             <p id="buy"><div class="pHeader">Buy</div>Recordings available for purchase are listed below with sample previews and details such as title, duration, size, and price (commercial price is three times the personal price). For privacy reasons, the exact location and recording date are left out. Each sample includes short segments from the actual recording. To purchase, simply pay using one of the available methods (to be implemented) and email me the payment information along with the recordings you want at <span id="email"></span>. After confirming your payment, I'll send you a temporary download link for the requested recordings.</p>
         </div>
+		
+		
+		
         <div id="samples-container">
             <!-- ==================== -->
-            <div class="audio-box">
-                <div class="rec-title">Night Watchers</div>
-                <p class="rec-details">
-                    <span class="rec-prop">Location:</span> <span>Italy</span>
-                    <span class="rec-prop">Duration:</span> <span>09:21:45</span>
-                    <span class="rec-prop">Size:</span> <span>24.1 GB</span>
-                    <span class="rec-prop">Price:</span> <span>$20</span>
-                </p>
-                <p>Overnight on a high mountainside, facing another mountain dotted with farmers' houses where dogs bark frequently, their sounds echoing through the mountains and valley. In the valley below, there's a highway and a segmented bridge.</p>
-                <audio controls>
-                    <source src="./files/audio_samples/sample_night_watchers.mp3" type="audio/flac">
-                    Your browser does not support the audio element.
-                </audio>
+            <div class="audio_box">
+                <div class="rec_img_cont"><img class="rec_img" src=".\files\covers\night_watchers.jpg"></div>
+				<div class="audio_box_text_cont">
+					<div class="rec-title">Night Watchers</div>
+					<p class="rec-details">
+						<span class="rec-prop">Location:</span> <span>Italy</span>
+						<span class="rec-prop">Duration:</span> <span>09:21:45</span>
+						<span class="rec-prop">Size:</span> <span>24.1 GB</span>
+						<span class="rec-prop">Price:</span> <span>$20</span>
+					</p>
+					<p>Overnight on a high mountainside, facing another mountain dotted with farmers' houses where dogs bark frequently, their sounds echoing through the mountains and valley. In the valley below, there's a highway and a segmented bridge.</p>
+					<audio controls>
+						<source src="./files/audio_samples/sample_night_watchers.mp3" type="audio/flac">
+						Your browser does not support the audio element.
+					</audio>
+				</div>
             </div>
             <!-- ==================== -->
-            <div class="audio-box">
-                <div class="rec-title">Landing</div>
-                <p class="rec-details">
-                    <span class="rec-prop">Location:</span> Greece<br>
-                    <span class="rec-prop">Duration:</span> 09:21:45<br>
-                    <span class="rec-prop">Size:</span> 32.5 GB<br>
-                    <span class="rec-prop">Price:</span> $20
-                </p>
-                <p>Overnight on a hillside with a nearby village and, far in the distance on the left, an airport where airplanes descend all night.</p>
-                <audio controls>
-                    <source src="./files/audio_samples/sample_landing.mp3" type="audio/flac">
-                    Your browser does not support the audio element.
-                </audio>
+            <!-- ==================== -->
+            <div class="audio_box">
+                <div class="rec_img_cont"><img class="rec_img" src=".\files\covers\landing.jpg"></div>
+				<div class="audio_box_text_cont">
+					<div class="rec-title">Landing</div>
+					<p class="rec-details">
+						<span class="rec-prop">Location:</span> Greece<br>
+						<span class="rec-prop">Duration:</span> 09:21:45<br>
+						<span class="rec-prop">Size:</span> 32.5 GB<br>
+						<span class="rec-prop">Price:</span> $20
+					</p>
+					<p>Overnight on a hillside with a nearby village and, far in the distance on the left, an airport where airplanes descend all night.</p>
+					<audio controls>
+						<source src="./files/audio_samples/sample_landing.mp3" type="audio/flac">
+						Your browser does not support the audio element.
+					</audio>
+				</div>
             </div>
             <!-- ==================== -->
-            <div class="audio-box">
-                <div class="rec-title">Crowmania</div>
-                <p class="rec-details">
-                    <span class="rec-prop">Location:</span> Australia<br>
-                    <span class="rec-prop">Duration:</span> 03:18:00<br>
-                    <span class="rec-prop">Size:</span> 8.5 GB<br>
-                    <span class="rec-prop">Price:</span> $5
-                </p>
-                <p>In the afternoon, in a valley with a stream and an old wooden bridge to the left, a gang of crows chatters in the trees in the area.</p>
-                <audio controls>
-                    <source src="./files/audio_samples/sample_crowmania.mp3" type="audio/flac">
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+            <!-- <div class="audio_box"> -->
+                <!-- <div class="rec-title">Landing</div> -->
+                <!-- <p class="rec-details"> -->
+                    <!-- <span class="rec-prop">Location:</span> Greece<br> -->
+                    <!-- <span class="rec-prop">Duration:</span> 09:21:45<br> -->
+                    <!-- <span class="rec-prop">Size:</span> 32.5 GB<br> -->
+                    <!-- <span class="rec-prop">Price:</span> $20 -->
+                <!-- </p> -->
+                <!-- <p>Overnight on a hillside with a nearby village and, far in the distance on the left, an airport where airplanes descend all night.</p> -->
+                <!-- <audio controls> -->
+                    <!-- <source src="./files/audio_samples/sample_landing.mp3" type="audio/flac"> -->
+                    <!-- Your browser does not support the audio element. -->
+                <!-- </audio> -->
+            <!-- </div> -->
+            <!-- ==================== -->
+            <!-- <div class="audio_box"> -->
+                <!-- <div class="rec-title">Crowmania</div> -->
+                <!-- <p class="rec-details"> -->
+                    <!-- <span class="rec-prop">Location:</span> Australia<br> -->
+                    <!-- <span class="rec-prop">Duration:</span> 03:18:00<br> -->
+                    <!-- <span class="rec-prop">Size:</span> 8.5 GB<br> -->
+                    <!-- <span class="rec-prop">Price:</span> $5 -->
+                <!-- </p> -->
+                <!-- <p>In the afternoon, in a valley with a stream and an old wooden bridge to the left, a gang of crows chatters in the trees in the area.</p> -->
+                <!-- <audio controls> -->
+                    <!-- <source src="./files/audio_samples/sample_crowmania.mp3" type="audio/flac"> -->
+                    <!-- Your browser does not support the audio element. -->
+                <!-- </audio> -->
+            <!-- </div> -->
             <!-- ==================== -->
         </div>
         <footer>
