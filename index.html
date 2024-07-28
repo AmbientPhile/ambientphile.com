@@ -50,12 +50,17 @@
             scroll-padding-top: 140px;
         }
         body {
-            -background-color: var(--bg-color); /* Fixed typo */
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             font-family: system-ui;
+        }
+        .content {
+            overflow: hidden;
+            width: 95%;
+            max-width: 800px;
+			margin-top: 1rem;
         }
         .audio_box {
 			padding: 1rem;
@@ -65,7 +70,7 @@
             border: 1px solid #ddd;
 			overflow: hidden;
 			filter: drop-shadow(0 0 0.3rem #ddd); /* Apply shadow directly to the image */
-			width: 90%;
+			width: 85%;
 			margin-left: auto;
 			margin-right: auto;
         }
@@ -100,29 +105,6 @@
             display: grid;
             grid-template-columns: auto 1fr; /* Allows first column to auto-size and second column to take remaining space */
             gap: 0px 0.5rem; /* Adjusts spacing between grid items */
-        }
-        .content {
-            overflow: hidden;
-            width: 90%;
-            max-width: 800px;
-			margin-top: 1rem;
-        }
-        .expandable-div {
-            overflow: hidden; /* Hide overflow content */
-            transition: max-height 0.5s ease; /* Smooth transition for height changes */
-        }
-        .expanded {
-            max-height: fit-content; /* Large value to fit all content; adjust as needed */
-        }
-        .c222 {
-			padding: 0.5rem;
-            color: blue;
-			cursor: pointer;
-        }
-        .g444 {
-			padding: 0.5rem;
-            color: blue;
-			cursor: pointer;
         }
         .navBar {
             z-index: 1000;
@@ -264,22 +246,5 @@
         </footer>
     </div>
 		<!-- ======================================== -->
-<script>
-	document.getElementById('toggleButton').addEventListener('click', function() {
-		var contentDiv = document.getElementById('contentDiv');
-		contentDiv.classList.toggle('expanded');
-		var toggleButtonText = this.querySelector('a');
-
-		if (toggleButtonText.classList.contains('c222')) {
-			toggleButtonText.classList.remove('c222');
-			toggleButtonText.classList.add('g444');
-			toggleButtonText.textContent = 'Read less';
-		} else {
-			toggleButtonText.classList.remove('g444');
-			toggleButtonText.classList.add('c222');
-			toggleButtonText.textContent = 'Read more';
-		}
-	});
-</script>
 </body>
 </html>
