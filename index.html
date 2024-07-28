@@ -58,24 +58,23 @@
             font-family: system-ui;
         }
         .audio_box {
+			padding: 1rem;
             background-color: var(--bg-color);
             margin-bottom: 20px;
             border-radius: 1rem;
             border: 1px solid #ddd;
 			overflow: hidden;
 			filter: drop-shadow(0 0 0.3rem #ddd); /* Apply shadow directly to the image */
-			width: 95%;
+			width: 90%;
 			margin-left: auto;
 			margin-right: auto;
         }
-		.audio_box_text_cont {
-			padding: 1rem;
-		}
         .audio_box audio {
             width: 100%;
         }
         footer {
             margin-top: 30px;
+            margin-bottom: 10px;
             font-size: 14px;
             color: #999;
             margin-left: auto;
@@ -138,7 +137,7 @@
             align-items: center;
             justify-content: center;
              font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1rem;
        }
 		.menu {
             width: 90%;
@@ -155,12 +154,14 @@
 		.cont_about {
 			-border: 1px solid #ddd;
 			-border-radius: 1rem;
-			-overflow-y: scroll;
-			-max-height: 300px;
+			border-bottom: 2px solid silver;
+			
+			
+			overflow-y: scroll;
+			max-height: 300px;
 			margin-bottom: 50px;
 			margin-left: auto;
 			margin-right: auto;
-			padding: 1rem;
 			scroll-behavior: smooth;
 			width: 95%;
 		}
@@ -184,7 +185,6 @@
 			position: relative; /* Ensure positioning context */
 			filter: drop-shadow(0 0 0.3rem #555); /* Apply shadow directly to the image */
 			border-bottom-right-radius: 2rem;
-			<!-- border-bottom-left-radius: 1rem; -->
 		}
 		.rec_img {
 			width: 100%;
@@ -194,7 +194,8 @@
 <body>
     <div class="navBar">
         <div class="menu">
-			<span><a href="#home">Home</a></span><span class="menu_sep"></span><span><a href="#recordings">Recordings</a></span><span class="menu_sep"></span><span><a href="#buy">Buy</a></span><span class="menu_sep"></span><span><a href="#samples-container">Samples</a></span>
+		<div style="font-weight: normal; color: orange;">[ UNDER CONSTRUCTION ]</div>
+			<span><a href="#home">Home</a></span><span class="menu_sep"></span><span><a href="#recordings">Recordings</a></span><span class="menu_sep"></span><span><a href="#buy">Buy</a></span><span class="menu_sep"></span><span><a href="#samples_container">Samples</a></span>
         </div>
 	</div>
     <!-- ======================================== -->
@@ -210,83 +211,52 @@
 		
 		
 		
-        <div id="samples-container">
+        <div id="samples_container">
             <!-- ==================== -->
             <div class="audio_box">
-                <div class="rec_img_cont"><img class="rec_img" src=".\files\covers\night_watchers.jpg"></div>
-				<div class="audio_box_text_cont">
-					<div class="rec-title">Night Watchers</div>
-					<p class="rec-details">
-						<span class="rec-prop">Location:</span> <span>Italy</span>
-						<span class="rec-prop">Duration:</span> <span>09:21:45</span>
-						<span class="rec-prop">Size:</span> <span>24.1 GB</span>
-						<span class="rec-prop">Price:</span> <span>$20</span>
-					</p>
-					<p>Overnight on a high mountainside, facing another mountain dotted with farmers' houses where dogs bark frequently, their sounds echoing through the mountains and valley. In the valley below, there's a highway and a segmented bridge.</p>
-					<audio controls>
-						<source src="./files/audio_samples/sample_night_watchers.mp3" type="audio/flac">
-						Your browser does not support the audio element.
-					</audio>
-				</div>
+				<div class="rec-title">Night Watchers</div>
+				<p class="rec-details">
+					<span class="rec-prop">Location:</span> <span>Italy</span>
+					<span class="rec-prop">Duration:</span> <span>09:21:45</span>
+					<span class="rec-prop">Size:</span> <span>24.1 GB</span>
+					<span class="rec-prop">Price:</span> <span>$20</span>
+				</p>
+				<p>Overnight on a high mountainside, facing another mountain dotted with farmers' houses where dogs bark frequently, their sounds echoing through the mountains and valley. In the valley below, there's a highway and a segmented bridge.</p>
+				<audio controls>
+					<source src="./files/audio_samples/sample_night_watchers.mp3" type="audio/flac">
+					Your browser does not support the audio element.
+				</audio>
             </div>
-            <!-- ==================== -->
             <!-- ==================== -->
             <div class="audio_box">
-                <div class="rec_img_cont"><img class="rec_img" src=".\files\covers\landing.jpg"></div>
-				<div class="audio_box_text_cont">
-					<div class="rec-title">Landing</div>
-					<p class="rec-details">
-						<span class="rec-prop">Location:</span> Greece<br>
-						<span class="rec-prop">Duration:</span> 09:21:45<br>
-						<span class="rec-prop">Size:</span> 32.5 GB<br>
-						<span class="rec-prop">Price:</span> $20
-					</p>
-					<p>Overnight on a hillside with a nearby village and, far in the distance on the left, an airport where airplanes descend all night.</p>
-					<audio controls>
-						<source src="./files/audio_samples/sample_landing.mp3" type="audio/flac">
-						Your browser does not support the audio element.
-					</audio>
-				</div>
+				<div class="rec-title">Landing</div>
+				<p class="rec-details">
+					<span class="rec-prop">Location:</span> Greece<br>
+					<span class="rec-prop">Duration:</span> 09:21:45<br>
+					<span class="rec-prop">Size:</span> 32.5 GB<br>
+					<span class="rec-prop">Price:</span> $20
+				</p>
+				<p>Overnight on a hillside with a nearby village and, far in the distance on the left, an airport where airplanes descend all night.</p>
+				<audio controls>
+					<source src="./files/audio_samples/sample_landing.mp3" type="audio/flac">
+					Your browser does not support the audio element.
+				</audio>
             </div>
             <!-- ==================== -->
-			
-			
-			
-			
-			
-			
-			
-			
-			
-            <!-- <div class="audio_box"> -->
-                <!-- <div class="rec-title">Landing</div> -->
-                <!-- <p class="rec-details"> -->
-                    <!-- <span class="rec-prop">Location:</span> Greece<br> -->
-                    <!-- <span class="rec-prop">Duration:</span> 09:21:45<br> -->
-                    <!-- <span class="rec-prop">Size:</span> 32.5 GB<br> -->
-                    <!-- <span class="rec-prop">Price:</span> $20 -->
-                <!-- </p> -->
-                <!-- <p>Overnight on a hillside with a nearby village and, far in the distance on the left, an airport where airplanes descend all night.</p> -->
-                <!-- <audio controls> -->
-                    <!-- <source src="./files/audio_samples/sample_landing.mp3" type="audio/flac"> -->
-                    <!-- Your browser does not support the audio element. -->
-                <!-- </audio> -->
-            <!-- </div> -->
-            <!-- ==================== -->
-            <!-- <div class="audio_box"> -->
-                <!-- <div class="rec-title">Crowmania</div> -->
-                <!-- <p class="rec-details"> -->
-                    <!-- <span class="rec-prop">Location:</span> Australia<br> -->
-                    <!-- <span class="rec-prop">Duration:</span> 03:18:00<br> -->
-                    <!-- <span class="rec-prop">Size:</span> 8.5 GB<br> -->
-                    <!-- <span class="rec-prop">Price:</span> $5 -->
-                <!-- </p> -->
-                <!-- <p>In the afternoon, in a valley with a stream and an old wooden bridge to the left, a gang of crows chatters in the trees in the area.</p> -->
-                <!-- <audio controls> -->
-                    <!-- <source src="./files/audio_samples/sample_crowmania.mp3" type="audio/flac"> -->
-                    <!-- Your browser does not support the audio element. -->
-                <!-- </audio> -->
-            <!-- </div> -->
+            <div class="audio_box">
+                <div class="rec-title">Crowmania</div>
+                <p class="rec-details">
+                    <span class="rec-prop">Location:</span> Australia<br>
+                    <span class="rec-prop">Duration:</span> 03:18:00<br>
+                    <span class="rec-prop">Size:</span> 8.5 GB<br>
+                    <span class="rec-prop">Price:</span> $5
+                </p>
+                <p>In the afternoon, in a valley with a stream and an old wooden bridge to the left, a gang of crows chatters in the trees in the area.</p>
+                <audio controls>
+                    <source src="./files/audio_samples/sample_crowmania.mp3" type="audio/flac">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
             <!-- ==================== -->
         </div>
         <footer>
