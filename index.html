@@ -182,21 +182,10 @@
 			display: block;
 			overflow: hidden;
 			position: relative; /* Ensure positioning context */
-			-filter: drop-shadow(0 0 0.5rem #555); /* Apply shadow directly to the image */
-			-border-bottom-right-radius: 2rem;
+			filter: drop-shadow(0 0 0.5rem #555); /* Apply shadow directly to the image */
+			border-bottom-right-radius: 2rem;
 			<!-- border-bottom-left-radius: 1rem; -->
 		}
-        .rec_img_cont::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            -border-radius: 8px; /* Match the image border-radius */
-            box-shadow: inset 0 0 20px rgba(255, 255, 255, 1);
-            pointer-events: none; /* Ensure the pseudo-element does not interfere with image interactions */
-        }
 		.rec_img {
 			width: 100%;
 		}
