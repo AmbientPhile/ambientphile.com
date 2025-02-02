@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AmbientPhile.com</title>
     <script src='./script.js'></script>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var header = document.querySelector('.navBar');
@@ -13,24 +12,20 @@
             var headerHeight = header.offsetHeight;
             console.log('Height of the top bar:', headerHeight); // Print the height of the top bar
             content.style.paddingTop = headerHeight + 'px';
-
             var paragraphs = document.querySelectorAll('#contentDiv p');
             var currentIndex = 1; // Start with the first paragraph visible
-
             // Initially show only the first paragraph
             paragraphs.forEach((para, index) => {
                 if (index >= currentIndex) {
                     para.style.display = 'none';
                 }
             });
-
             document.getElementById('toggleButton').addEventListener('click', function() {
                 var newIndex = currentIndex + 2; // Show 2 more paragraphs
                 for (var i = currentIndex; i < newIndex && i < paragraphs.length; i++) {
                     paragraphs[i].style.display = paragraphs[i].style.display === 'none' ? 'block' : 'none';
                 }
                 currentIndex = newIndex;
-
                 // Update button text
                 if (currentIndex >= paragraphs.length) {
                     currentIndex = 1; // Reset to start for toggling
@@ -38,7 +33,6 @@
             });
         });
     </script>
-    
     <style>
         :root {
             --accent-color_1: #F06543;
@@ -132,7 +126,6 @@
 		.menu_sep::after {
 			content: " • ";
 		}
-
 		.navBar a {
 			color: #000;
 			text-decoration: none; /* no underline */
@@ -165,14 +158,9 @@
         <!-- <div class="expandable-div" id="contentDiv"> -->
         <div class="cont_about">
             <p id="home">AmbientPhile.com was born out of my love for recording and listening to ambient sounds. A couple of times a year, I travel to different countries, capturing the natural sounds of various environments without disturbing the setting or alerting those present. To try and capture every subtle nuance of these soundscapes, I use professional-grade microphones and recorders. I created this website to offer my recordings for sale and help fund my travels in making these ambient recordings.</p>
-
             <p id="recordings"><div class="pHeader">Recordings</div>Each recording is a single continuous session, often exceeding 10 hours, maintaining the natural atmosphere without artificial breaks or edits. These recordings are in 32-bit float WAV format at a sample rate of 96,000 Hz, ensuring high-fidelity representation that preserves the authenticity and tranquility of the soundscapes. Each download includes the original WAV files and a joint, tagged FLAC file edited to eliminate any clipping.</p>
-
             <p id="buy"><div class="pHeader">Buy</div>Recordings available for purchase are listed below with sample previews and details such as title, duration, size, and price (commercial price is three times the personal price). For privacy reasons, the exact location and recording date are left out. Each sample includes short segments from the actual recording. To purchase, simply pay using one of the available methods (to be implemented) and email me the payment information along with the recordings you want at <span id="email"></span>. After confirming your payment, I'll send you a temporary download link for the requested recordings.</p>
         </div>
-		
-		
-		
         <div id="samples_container">
             <!-- ==================== -->
             <div class="audio_box">
@@ -187,6 +175,22 @@
 				<p>Overnight on a high mountainside, facing another mountain dotted with farmers' houses where dogs bark frequently, their sounds echoing through the mountains and valley. In the valley below, there's a highway and a segmented bridge.</p>
 				<audio controls>
 					<source src="./files/audio_samples/sample_night_watchers.mp3" type="audio/flac">
+					Your browser does not support the audio element.
+				</audio>
+            </div>
+            <!-- ==================== -->
+            <div class="audio_box">
+				<div class="rec-title">Ancient Pine Forest</div>
+				<p class="rec-details">
+					<span class="rec-prop">Location:</span> <span>Greece</span>
+					<span class="rec-prop">Duration:</span> <span>13:53:45</span>
+					<span class="rec-prop">WAV Size:</span> 36.2 GB<br>
+					<span class="rec-prop">FLAC Size:</span> 2.28 GB<br>
+					<span class="rec-prop">Price:</span> <span>$20</span>
+				</p>
+				<p>Overnight recording. To the left is an ancient pine forest; to the right is the sea.</p>
+				<audio controls>
+					<source src="./files/audio_samples/ancient_pine_forest_sample.mp3" type="audio/flac">
 					Your browser does not support the audio element.
 				</audio>
             </div>
